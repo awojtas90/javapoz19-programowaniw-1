@@ -1,16 +1,31 @@
-public class book {
+package pl.sdacademy.javapoz19programowanie1;
+
+import pl.sdacademy.javapoz19programowanie1.Author;
+
+public class Book {
     private String name;
     private int releaseyear;
     private int pages;
+    private Author author;
 
-    public book() {
+    public Book() {
 
     }
 
-    public book(String name, int releaseyear, int pages) {
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public Book(String name, int releaseyear, int pages, Author author) {
         this.name = name;
         this.releaseyear = releaseyear;
         this.pages = pages;
+        this.author = author;
+
     }
 
     @Override

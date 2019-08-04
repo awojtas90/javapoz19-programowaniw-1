@@ -1,5 +1,7 @@
 package pl.sdacademy.javapoz19programowanie1;
 
+import java.util.Objects;
+
 public class Author {
 
     private String firstname;
@@ -16,6 +18,22 @@ public class Author {
         this.lastname = lastname;
         this.birthyear = birthyear;
         this.nation = nation;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return birthyear == author.birthyear &&
+                Objects.equals(firstname, author.firstname) &&
+                Objects.equals(lastname, author.lastname) &&
+                nation == author.nation;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstname, lastname, birthyear, nation);
     }
 
     public String getFirstname() {
