@@ -5,6 +5,7 @@ import pl.sdacademy.javapoz19programowanie1.Nation;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class inMemoryAthorsRepository implements AuthorsRepository {
 
@@ -13,6 +14,22 @@ public class inMemoryAthorsRepository implements AuthorsRepository {
     public inMemoryAthorsRepository() {
         this.authors = new ArrayList<>();
         init();
+
+    }
+    @Override
+    public List<Author>findByNation(Nation nation){
+        return authors.stream()
+                .filter(author-> author.getNation().equals(nation))
+                .collect(Collectors.toList());
+
+
+    }
+
+    @Override
+    public List<Author> findAfterBirthYear(int birthYear) {
+        return authors.stream()
+                .filter(author -> author.getBirthyear()>= birthYear)
+                .collect(Collectors.toList());
 
     }
 

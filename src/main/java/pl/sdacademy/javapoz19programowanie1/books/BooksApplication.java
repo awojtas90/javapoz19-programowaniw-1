@@ -6,4 +6,9 @@ public class BooksApplication {
 
     }
 
+
+    private void init (){
+
+    }
+
 }
