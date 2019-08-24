@@ -1,6 +1,6 @@
-package pl.sdacademy.javapoz19programowanie1;
+package pl.sdacademy.javapoz19programowanie1.books;
 
-import pl.sdacademy.javapoz19programowanie1.Author;
+import pl.sdacademy.javapoz19programowanie1.books.Author;
 
 public class Book {
     private String name;
